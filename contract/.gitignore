@@ -1,0 +1,22 @@
+# Root Node
+node_modules/
+
+# Hardhat
+contract/node_modules/
+contract/artifacts/
+contract/cache/
+contract/typechain-types/
+contract/coverage/
+
+# Build
+dist/
+bundle/
+
+# Env
+.env
+
+# Logs
+*.log
+
+# OS
+.DS_Store
