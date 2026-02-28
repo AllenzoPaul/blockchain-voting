@@ -18,11 +18,22 @@ function App() {
   };
 
   const addCandidate = async () => {
+  try {
+    console.log("Getting contract...");
     const contract = await getContract();
+    console.log("Contract:", contract);
+
+    console.log("Sending tx...");
     const tx = await contract.addCandidate("Charlie");
+    console.log("TX object:", tx);
+
     await tx.wait();
     alert("Candidate Added!");
-  };
+  } catch (error) {
+    console.error("FULL ERROR:", error);
+    alert(error?.reason || error?.message || "Transaction failed");
+  }
+};
 
   return (
     <div style={{ padding: "40px" }}>
